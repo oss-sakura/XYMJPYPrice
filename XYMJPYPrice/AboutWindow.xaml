@@ -1,0 +1,30 @@
+﻿<Window x:Class="XYMJPYPrice.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XYMJPYPrice"
+        mc:Ignorable="d"
+        Title="About" Height="280" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="XYM/JPY Price" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" >
+            <TextBlock >
+                <Hyperlink x:Name="hyperlink1" NavigateUri="https://sakura-it.com/">https://sakura-it.com/</Hyperlink>
+            </TextBlock>
+            <TextBlock >
+                <Hyperlink x:Name="hyperlink2" NavigateUri="https://github.com/oss-sakura/XYMJPYPrice">https://github.com/oss-sakura/XYMJPYPrice</Hyperlink>
+            </TextBlock>
+            <TextBlock >
+                <Hyperlink x:Name="hyperlink3" NavigateUri="https://just4fun.biz/">https://just4fun.biz/</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+        <Label Grid.Row="2" Content="(c) 2022- IT SUPPORT SAKURA inc." HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</Window>
