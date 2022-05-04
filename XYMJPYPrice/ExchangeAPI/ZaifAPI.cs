@@ -40,10 +40,17 @@ namespace XYMJPYPrice.ExchangeAPI
                 {
                     DeserializedResponse = js.ReadObject(ms) as ZaifTicker;
                 }
-                _ask = DeserializedResponse.ask;
-                _bid = DeserializedResponse.bid;
-                _last = DeserializedResponse.last;
-                _statusCode = statusCode;
+                try
+                {
+                    _ask = DeserializedResponse.ask;
+                    _bid = DeserializedResponse.bid;
+                    _last = DeserializedResponse.last;
+                    _statusCode = statusCode;
+                }
+                catch
+                {
+                    _statusCode = -1;
+                }
             }
         }
 

@@ -43,10 +43,17 @@ namespace XYMJPYPrice.ExchangeAPI
                 {
                     DeserializedResponse = js.ReadObject(ms) as BitbankTicker;
                 }
-                _ = float.TryParse(DeserializedResponse.data.sell, out _ask);
-                _ = float.TryParse(DeserializedResponse.data.buy, out _bid);
-                _ = float.TryParse(DeserializedResponse.data.last, out _last);
-                _statusCode = statusCode;
+                try
+                {
+                    _ = float.TryParse(DeserializedResponse.data.sell, out _ask);
+                    _ = float.TryParse(DeserializedResponse.data.buy, out _bid);
+                    _ = float.TryParse(DeserializedResponse.data.last, out _last);
+                    _statusCode = statusCode;
+                }
+                catch
+                {
+                    _statusCode = -1;
+                }
             }
         }
 
